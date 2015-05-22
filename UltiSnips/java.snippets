@@ -1,0 +1,45 @@
+snippet main "Easy way for the main function in jave" b
+public static void main(String[] args){
+	${1:write your function here}
+}
+endsnippet
+
+snippet bug "Add a bug sign" b
+
+
+/*	Introcuded By:  `echo $USER` 
+ *	Time: `!v strftime("%c")`
+ *	Attention: For Next Time Fix
+ */
+
+endsnippet
+
+snippet class "Class Definition" b
+public class ${1:ClassName}{
+	
+}
+endsnippet
+
+
+snippet get "The Getter and the Setter" b
+public $1 get${2:Element}(){
+	return $2;
+}
+public void set$2($1 ${4:Variable}){
+	$2 = $4;
+}
+endsnippet
+
+snippet interface "The interface definition" !b
+public interface ${1:InterfaceName}{
+	$2
+}
+endsnippet
+
+snippet final "static variable" b
+private static final ${1:int} = ${2:Value};
+endsnippet
+
+snippet util "import java util" b
+import java.util.${1:Scanner};
+endsnippet
