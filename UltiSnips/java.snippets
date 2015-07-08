@@ -7,7 +7,8 @@ endsnippet
 snippet bug "Add a bug sign" b
 
 
-/*	Introcuded By:  `echo $USER` 
+/*	Bug: Needs to be fixed: 
+ *  Introcuded By:  `echo $USER` 
  *	Time: `!v strftime("%c")`
  *	Attention: For Next Time Fix
  */
@@ -22,13 +23,24 @@ endsnippet
 
 
 snippet get "The Getter and the Setter" b
-public $1 get${2:Element}(){
+/* --------Getter and Setter method ---------*/
+public ${1:int} get${2:Element}(){
 	return $2;
 }
 public void set$2($1 ${4:Variable}){
 	$2 = $4;
 }
 endsnippet
+
+snippet nget "The Getter and the Setter" b
+public ${1:int} get${2:Element}(){
+	return $2;
+}
+public void set$2($1 ${4:Variable}){
+	$2 = $4;
+}
+endsnippet
+
 
 snippet interface "The interface definition" !b
 public interface ${1:InterfaceName}{
@@ -37,9 +49,160 @@ public interface ${1:InterfaceName}{
 endsnippet
 
 snippet final "static variable" b
-private static final ${1:int} = ${2:Value};
+private static final ${1:int}  ${2:Value} = ;
 endsnippet
 
 snippet util "import java util" b
 import java.util.${1:Scanner};
+endsnippet
+
+snippet print "The print" b
+System.out.print$1($2);
+endsnippet
+
+snippet try "try-catch" b
+try{
+	${1:editing}
+}catch(${2:Name}Exception e){
+	${3:e.printStackTrace();}
+}
+endsnippet
+
+snippet throw "throw exception" b
+throw new ${1:Name}Exception();
+endsnippet
+
+snippet supp "SuppressWarnings" !b
+@SuppressWarnings("unchecked")$1
+endsnippet
+
+snippet check "someTest" !b
+private void check(){
+	if($1){
+		throw new ${2:Name}Exception();
+	}
+}
+endsnippet
+
+snippet toString "A bref for toString" !b
+@Override
+public String toString(){
+	StringBuilder s = new StringBuilder();
+	s.append("[");
+	$1
+	s.append("]");
+	return s.toString();
+}
+endsnippet
+
+snippet clone "clone for method" !b
+public ${1:Object} clone() throws CloneNotSupportedException{
+	
+}
+endsnippet
+
+snippet equals "An abbrivation to equals" !b
+public boolean equals(Object o){
+	if(o == null)
+		return false;
+	if(o.getClass() != getClass())
+		return false;
+	@SuppressWarnings("unchecked")
+	${2:Object} other = ($2)o;
+
+}
+endsnippet
+
+snippet iftest "if-else shortand" !b
+if($1){
+	System.out.println("${2:Guess right"});
+}else{
+
+	System.out.println("${3:Sonething Wrong}");
+}
+endsnippet
+
+snippet iterator "The iterator style" !b
+private class ${1:Name}Iterator implements Iterator<E>{
+	public boolean hasNext(){
+		$2;
+	}
+	public ${3:int} next(){
+		if(!hasNext())
+			throw new NoSuchElementException("${4:No element here}");
+	}
+	public void remove(){
+		if()
+			throw new NoSuchElementException("${4:Nothing to remove}");
+	}
+}
+endsnippet
+
+snippet ini "To create class faster" !b
+${1:LinkedList}<$2> ${3:ClassName} = new $1<>();
+endsnippet
+
+snippet fx "import common javafx library" !b
+import javafx.application.Application;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.*;
+import javafx.event.*;
+public class ${1:classname} extends Application{
+	public static void main(String[] args){
+		launch(args);
+		System.out.println("Reach the end");
+	}
+	@Override
+	public void start(Stage primaryStage){
+		${2:Control and Pane and Scene};
+		
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("AppName");
+		primaryStage.show();
+	} 
+}
+endsnippet
+snippet butt "Create a butttom" !b
+${1:btn} = new Button("ClickMe");
+$1.setOnAction();
+endsnippet
+snippet fxx "File to import" !b
+import javafx.application.Application;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.*;
+import javafx.event.*;
+import javafx.collections.*;
+endsnippet
+snippet Text "Quick" !b
+TextField ${1:text} = new TextField();
+$1.setPromptText("${2:Prompt}");
+$1.setMaxWidth(${3:100});
+$1.setMinWidth(${4:50});
+$1.setPrefWidth(${5:80});
+endsnippet
+snippet desc "Add a Descriptive text for the class file" !b
+/* ${1:Common class for code practice}
+ *	   author: `echo $USER` 
+ *	   Date: `date +"%Y-%m-%d %h:%m"`
+ */ 
+endsnippet
+
+snippet err "Error Message" !b
+System.err.println("ERROR: " + ${1:e});
+endsnippet
+snippet holder "Description" !b
+System.out.println("");
+endsnippet
+
+snippet net "NetWork programming" !b
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 endsnippet

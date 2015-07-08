@@ -7,3 +7,67 @@ endsnippet
 snippet todo "This is a TODO remember" b
 <!-- TODO: `echo $USER` ${1:desc} `!v strftime("%c")` -->
 endsnippet
+
+snippet div "div quick begin" !b
+<div>
+	<$1></$1>
+</div>
+endsnippet
+
+snippet divc "with class attribute" !b
+<div class="$1">
+	$2
+</div>
+endsnippet
+snippet lay "Basic Layout of the html" !b
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>${1:Title Here}</title>
+	</head>
+
+	<body>
+		<p></p>
+	</body>
+</html>
+endsnippet
+snippet css "css introductor" !b
+<link rel="stylesheet" type="text/css" href="$1">
+endsnippet
+snippet < "Better typping" !b
+<${1:div}></${1/(\w+).*/$1/}
+endsnippet
+
+snippet <c "Better typping" !b
+<${1:div} class="$2"></$1
+endsnippet
+
+snippet list "A shorthand for the ordered list with three item" !b
+<${1:ol}>
+	<li>$2</li>
+	<li></li>
+	<li></li>
+</$1>
+endsnippet
+snippet table "Table shorthand" !b
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+endsnippet
+
