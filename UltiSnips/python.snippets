@@ -1,0 +1,36 @@
+snippet turtle "A quick start for little turtle program" !b
+import turtle
+def make_window(color, title):
+	wn = turtle.Screen()
+	wn.bgcolor(color)
+	wn.title(title)
+
+	return wn
+
+def make_turtle(color, size):
+	t = turtle.Turtle()
+	t.color(color)
+	t.pensize(size)
+
+	return t
+window = make_window("lightgreen", "Application")
+eric = make_turtle("red", 5)
+
+endsnippet
+snippet test "Boil down template for test suit" !b
+import sys
+def test(did_pass):
+    """ Print the result of a test """
+    linenum = sys._getframe(1).f_lineno
+    if(did_pass):
+        msg = "Test at line {0} OK".format(linenum)
+    else:
+        msg = "Test at line {0} Failed".format(linenum)
+    print(msg)
+endsnippet
+
+snippet template "Python little program template" !b
+if __name__ == '__main__':
+	${1:function_call()}
+endsnippet
+
