@@ -44,6 +44,39 @@ snippet bug "Add a bug sign" b
 #
 
 endsnippet
+
 snippet todo "TODO Reminder" !b
 #TODO ${1:"Misisng Module: Keep it small and elegent"}
+endsnippet
+
+snippet py "python template" !b
+#! /usr/bin/python3
+# Desc: ${1:"Something Meaningful"}
+# DateTime: `date "+%Y-%m-%d %H:%M"`
+# Creator: `echo $USER`
+endsnippet
+
+snippet class "template for class in python" !b
+class ${1:Classname}:
+	# Constructors
+	def __init__(self):
+	
+	# Getter and Setter
+
+	# Operations
+endsnippet
+
+snippet main "Unit_test" !b
+if __name__ == '__main__':
+	${1:unit_test()}
+endsnippet
+
+snippet s "setter method" !b
+def set_${1:"var"}(self, $1):
+	self._$1 = $1 
+endsnippet
+
+snippet g "getter method" !b
+def get_${1:"var"}(self):
+	return self._$1
 endsnippet
